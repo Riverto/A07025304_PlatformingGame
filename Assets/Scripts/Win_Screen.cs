@@ -9,13 +9,10 @@ public class Win_Screen : MonoBehaviour {
     public StatCounter stats;
 	// Use this for initialization
 	void Start () {
+        //Busca el objeto stats que contiene el score y highscore
         stats = GameObject.Find("Stats").GetComponent<StatCounter>();
+        //Y lo muestra en pantalla usando labels
         ScoreLabel.text = "Score: " +stats.score;
         HighScoreLabel.text = "HighScore: " + stats.HighScore;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

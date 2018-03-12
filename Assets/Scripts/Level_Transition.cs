@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Level_Transition : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    //Cuando se toca este collider
     void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("triggered");
+        //Se busca el objeto del jugador
         PlayerController player = GameObject.FindObjectOfType<PlayerController>();
+        //Y se llama al metodo nextLevel
         player.nextLevel();
     }
 }
