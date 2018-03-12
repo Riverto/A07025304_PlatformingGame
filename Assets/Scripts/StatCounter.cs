@@ -8,6 +8,7 @@ public class StatCounter : MonoBehaviour {
     public int lives;
     public int initLives;
     public int points;
+    public int startPoints;
     public int score;
     public int HighScore;
     private int clears;
@@ -48,7 +49,7 @@ public class StatCounter : MonoBehaviour {
     public void LostLife()
     {
         lives--;
-        points = 0;
+        points = startPoints;
         Update();
     }
 
@@ -58,7 +59,7 @@ public class StatCounter : MonoBehaviour {
         clears = 0;
         lives = initLives;
     }
-    public void beatLevel()
+    public void reachedTop()
     {
         clears++;
         score += points;
@@ -68,5 +69,9 @@ public class StatCounter : MonoBehaviour {
         {
             HighScore = score;
         }
+    }
+    public void reachedDoor()
+    {
+        startPoints = points;
     }
 }

@@ -10,9 +10,12 @@ public class MusicChanger : MonoBehaviour {
 	void Start () {
         GameObject MPObject = GameObject.Find("Music Player");
         AudioSource musicPlayer = MPObject.GetComponent<AudioSource>();
-        musicPlayer.Stop();
-        musicPlayer.clip = LevelMusic;
-        musicPlayer.loop = true;
-        musicPlayer.Play();
+        if(musicPlayer.clip != LevelMusic)
+        {
+            musicPlayer.Stop();
+            musicPlayer.clip = LevelMusic;
+            musicPlayer.loop = true;
+            musicPlayer.Play();
+        }
 	}
 }

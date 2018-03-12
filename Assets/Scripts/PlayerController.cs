@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     public void won()
     {
-        levelManager.playerFinishedLevel();
+        levelManager.playerReachedTop();
     }
 
     // Update is called once per frame
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void nextLevel()
-    {
-        levelManager.LoadNextLevel();
+    {        
+        levelManager.playerReachedDoor();
     }
 }

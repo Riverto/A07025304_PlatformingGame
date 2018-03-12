@@ -39,11 +39,17 @@ public class LevelManager : MonoBehaviour {
             LoadLevel("lose");
         }
     }
-
-    public void playerFinishedLevel()
+    public void playerReachedDoor()
     {
         StatCounter stats = GameObject.Find("Stats").GetComponent<StatCounter>();
-        stats.beatLevel();
+        stats.reachedDoor();
+        LoadNextLevel();
+    }
+
+    public void playerReachedTop()
+    {
+        StatCounter stats = GameObject.Find("Stats").GetComponent<StatCounter>();
+        stats.reachedTop();
         LoadLevel("Win");
     }
 
